@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    image: thanhdev2703/demogocicd
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /data/log:/app/log
+      - ./.env:/app/.env
+    network_mode: "host"
