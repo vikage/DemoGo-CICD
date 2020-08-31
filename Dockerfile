@@ -4,7 +4,7 @@ COPY . .
 RUN go mod vendor
 RUN GOOS=linux go build -o main
 
-FROM golang:alpine
+FROM alpine
 EXPOSE 80
 WORKDIR /app
 COPY --from=BUILDER /go/src/app/main /app
